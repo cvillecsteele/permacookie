@@ -24,7 +24,7 @@ Your usage might resemble:
 
 For lein, in your project.clj:
 
-[org.clojars.cvillecsteele/ring-permacookie "1.0.0-SNAPSHOT"]
+        [org.clojars.cvillecsteele/ring-permacookie "1.0.0-SNAPSHOT"]
 
 ## License
 
