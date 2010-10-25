@@ -12,12 +12,12 @@ Your usage might resemble:
 
       (ns mine.core
         (:use [compojure.core]
-            [ring.middleware.cookies]
-            [ring.middleware.permacookie]))
+              [ring.middleware.cookies]
+              [ring.middleware.permacookie]))
       (defroutes webservice
         (GET          "/events"               [] events/render))
       (def app (-> (var webservice)
-                   (middle/wrap-visitor-permacookie {:name "nifty"})
+                   (wrap-permacookie {:name "nifty"})
                    wrap-cookies))`
 
 This middlware places a permanent cookie on the visitor's browser,
