@@ -20,6 +20,11 @@ Your usage might resemble:
                    (middle/wrap-visitor-permacookie {:name "nifty"})
                    wrap-cookies))`
 
+This middlware places a permanent cookie on the visitor's browser,
+with a unique identifier.  That identifier is then made available
+through the :visitor-id key on the request map which is available to
+handlers.
+
 ## Installation
 
 For lein, in your project.clj:
