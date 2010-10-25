@@ -10,17 +10,17 @@ ring.middleware.permacookie/wrap-permacookie.
 
 Your usage might resemble:
 
-`(ns mine.core
-  (:use [compojure.core]
+  (ns mine.core
+    (:use [compojure.core]
         [ring.middleware.cookies]
         [ring.middleware.permacookie]))
 
-(defroutes webservice
-  (GET          "/events"               [] events/render))
+  (defroutes webservice
+    (GET          "/events"               [] events/render))
 
-(def app (-> (var webservice)
-             (middle/wrap-visitor-permacookie {:name "nifty"})
-             wrap-cookies))`
+  (def app (-> (var webservice)
+               (middle/wrap-visitor-permacookie {:name "nifty"})
+               wrap-cookies))`
 
 ## Installation
 
