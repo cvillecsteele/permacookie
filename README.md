@@ -29,7 +29,7 @@ handlers.
 
 For lein, in your project.clj:
 
-        [org.clojars.cvillecsteele/ring-permacookie "1.0.0-SNAPSHOT"]
+        [org.clojars.cvillecsteele/ring-permacookie-middleware "1.0.0-SNAPSHOT"]
 
 ## License
 
