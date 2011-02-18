@@ -6,6 +6,6 @@
                      [ring/ring-core "0.3.1"]
                      [ring/ring-jetty-adapter "0.3.1"]
                      [lein-run "1.0.0-SNAPSHOT"]]
-  :repositories [["clojars" "http://clojars.org/repo"]]
+  :repositories {"clojars" "http://clojars.org/repo"}
   :dependencies [[org.clojure/clojure "1.2.0"]
                  [org.clojure/clojure-contrib "1.2.0"]])
