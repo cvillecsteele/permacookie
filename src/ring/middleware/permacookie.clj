@@ -2,7 +2,7 @@
   (:require [clojure.contrib.except :as except])
   (:import (java.util UUID)))
 
-(defn- permacookie
+(defn permacookie
   "Cough up a map of permacookie values."
   [value expires path domain]
   (if (or (= "127.0.0.1" domain) (= "localhost" domain))
