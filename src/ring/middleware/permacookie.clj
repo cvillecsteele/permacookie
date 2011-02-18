@@ -12,11 +12,12 @@
 (defn wrap-permacookie
   "Plant a permacookie on the browser."
   ([handler] (wrap-permacookie handler {}))
-  ([handler {:keys [name idfn expfn pathfn]
+  ([handler {:keys [name idfn expfn pathfn domainfn]
              :or {name "permacookie"
                   idfn (fn [r] (str (. UUID randomUUID)))
                   expfn (fn [r] "Sun, 01-Jan-2038 00:00:00 GMT")
-                  pathfn (fn [r] "/")}
+                  pathfn (fn [r] "/")
+                  domainfn (fn [r] (:server-name r))}
              :as opts}]
      (fn [request]
        (if (nil? (:cookies request))
@@ -27,7 +28,7 @@
              new-cookie (permacookie visitor-id
                                      (expfn request)
                                      (pathfn request)
-                                     (:server-name request))]
+                                     (domainfn request))]
          (if old-cookie
            ;; don't need to set cookie cuz it's already here
            (handler (assoc request :visitor-id visitor-id))

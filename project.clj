@@ -1,5 +1,5 @@
 (defproject org.clojars.cvillecsteele/ring-permacookie-middleware
-  "1.2.0-SNAPSHOT"
+  "1.3.0-SNAPSHOT"
   :description "Ring middleware for planting visitor cookies."
   :dev-dependencies [[lein-clojars "0.6.0"]
                      [compojure "0.5.2"]
