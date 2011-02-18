@@ -32,7 +32,9 @@
            ;; don't need to set cookie cuz it's already here
            (handler (assoc request :visitor-id visitor-id))
            ;; set it
-           (-> (handler (assoc request :visitor-id visitor-id))
-               (assoc ,,, :cookies (merge cookies {name new-cookie}))))))))
+           (let [resp (handler (assoc request :visitor-id visitor-id))]
+             (assoc resp :cookies (merge
+                                   (:cookies resp)
+                                   {name new-cookie}))))))))
   
 
